@@ -23,41 +23,56 @@ p, span {
 
 .d-flex:nth-of-type(1) .case:nth-of-type(1) {
     float:left;
-    width: 30%;
+    width: 20%;
     height:100vh;
     background-color:#795548;
+    background-image: url("assets/images/photo-it.jpeg");
+    background-size: cover;
+    background-position: right;
+
 }
 
 .d-flex:nth-of-type(1) .case:nth-of-type(2) {
     float:left;
-    width: 70%;
+    width: 80%;
     height:100vh;
     background-color:white;
 }
 
 .card {
     text-align: center;
+    padding-top: 160px;
     width:350px;
     background-color:#453129;
     position:relative;
     top:50%;
-    transform: translate(calc(30vw - 120px), -50%);
-    box-shadow: -11px 11px 17px 0 rgba(138,131,124,0.23),0 1px 4px rgba(0,0,0,.1);
+    transform: translate(calc(20vw - 120px), -50%);
+    box-shadow: -11px 11px 17px 0 rgba(0,0,0,0.23),0 1px 4px rgba(0,0,0,.1);
 }
 
 .card .card-media {
-    padding:30px;
+    padding: 30px;
+    width: 290px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -300px);
 }
 
 .card .card-media .img-rounded {
-    background-color:white;
-    margin:5px;
-    padding:40px 40px;
+    background-color: white;
+    margin: 5px;
+    padding: 40px 17px;
     border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
 }
 
 .card .card-media .img-rounded img {
-    width:80%;
+    width: 120px;
+    color:red;
 }
 
 .card .card-body {
@@ -65,12 +80,23 @@ p, span {
     padding:10px;
 }
 
-.card .card-body h1 {
+.card .card-body h1, .card .card-body h2 , .card .card-body h3  {
     color:white;
 }
 
+.card .card-body h1 {
+    font-weight: 400;
+    font-size:42px;
+}
+
 .card .card-body h2 {
-    color:white;
+    font-weight: 800;
+    font-size:28px;
+}
+
+.card .card-body h3 {
+    font-weight: 400;
+    font-size:16px;
 }
 
 .card .card-social {
@@ -87,30 +113,30 @@ p, span {
     text-decoration: none;
     color: #1a222e;
     font-weight:800;
+    font-size: 24px;
+}
+
+.small-divider-white {
+    width:50px;
+    height:3px;
+    background-color: white;
+    margin:15px auto;
+    border-radius: 5px;
 }
 
 .small-divider {
     width:50px;
     height:3px;
-    background-color: white;
     margin:15px auto;
-}
-
-.container{
-    position: relative;
-    margin-left: 270px;
-    top: 52vh;
-    transform: translate(0, -50%);
-    max-height: 650px;
-    overflow: hidden;
-    max-width:600px;
+    border-radius: 5px;
 }
 
 nav {
-    padding: 20px 0;
-    margin-top: 20vh;
-    margin-left: 270px;
-    position: absolute;
+    padding: 20px;
+    margin-top: 5px;
+
+    position: relative;
+    float: right;
 }
 
 nav a {
@@ -122,10 +148,20 @@ nav a {
     margin-right:10px;
 }
 
+.container{
+    position: relative;
+    margin-left: 270px;
+    top: 50vh;
+    transform: translate(0, calc(-50vh + 60px));
+    overflow: hidden;
+    padding:10px;
+    margin-top:50px;
+}
+
 .container .fs-42 {
     color:#795548;
     font-size:42px;
-    padding:25px 0 10px 0;
+    padding:0 0 10px 0;
     text-transform: uppercase;
 }
 
@@ -141,24 +177,26 @@ nav a {
 }
 
 .container .content {
-    height:500px;
+    height:60vh;
+    max-width:600px;
     overflow: auto;
+    padding:20px;
 }
 
 .container .content article {
+    margin-top:20px;
     margin-bottom:50px;
 }
 
-#competences, #experiences, #etudes {
-    transition:all .5s ease-in-out ;
+#coordonnee {
     position: absolute;
-    opacity: 0;
+    z-index:-1;
 }
-#competences:target, #experiences:target, #etudes:target  {
+
+#competences, #experiences, #etudes {
     opacity: 1;
     position: relative;
 }
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -181,4 +219,47 @@ nav a {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #453129;
+}
+
+#contact label {
+    display: block;
+    color:#dea793;
+    font-size:24px;
+    padding: 5px 0 5px 0;
+}
+
+#contact input {
+    border:none;
+    border-bottom:2px solid #dea793;
+    width: 100%;
+    padding:5px;
+    outline:0;
+    margin-bottom:20px;
+    transition: border .5s ease-in-out;
+}
+
+#contact input:focus, #contact textarea:focus {
+    border-bottom:2px solid #795548;
+}
+
+#contact textarea {
+    border:none;
+    border-bottom:2px solid #dea793;
+    width: 100%;
+    padding:5px;
+    outline:0;
+    margin-bottom:35px;
+    height:100px;
+}
+
+.btn {
+    border:none;
+}
+
+.btn-send {
+    padding:10px 20px;
+    border-radius:4px;
+    font-size:18px;
+    background-color: #795548;
+    color:white;
 }

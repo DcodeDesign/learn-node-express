@@ -1,5 +1,5 @@
 exports.cv = {
-    "coordonnes": {
+    "informations": {
         "prenom": "Thomas",
         "nom": "Gravy",
         "poste":"Frontend developer",
