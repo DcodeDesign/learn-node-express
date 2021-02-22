@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800;900&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body {
+    overflow: hidden;
+    background: #dedede;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #453129;
+}
+
+p, span {
+    color:#795548;
+    font-weight: 400;
+}
+
+.d-flex:nth-of-type(1) .case:nth-of-type(1) {
+    float:left;
+    width: 30%;
+    height:100vh;
+    background-color:#795548;
+}
+
+.d-flex:nth-of-type(1) .case:nth-of-type(2) {
+    float:left;
+    width: 70%;
+    height:100vh;
+    background-color:white;
+}
+
+.card {
+    text-align: center;
+    width:350px;
+    background-color:#453129;
+    position:relative;
+    top:50%;
+    transform: translate(calc(30vw - 120px), -50%);
+    box-shadow: -11px 11px 17px 0 rgba(138,131,124,0.23),0 1px 4px rgba(0,0,0,.1);
+}
+
+.card .card-media {
+    padding:30px;
+}
+
+.card .card-media .img-rounded {
+    background-color:white;
+    margin:5px;
+    padding:40px 40px;
+    border-radius: 50%;
+}
+
+.card .card-media .img-rounded img {
+    width:80%;
+}
+
+.card .card-body {
+    margin-top:-30px;
+    padding:10px;
+}
+
+.card .card-body h1 {
+    color:white;
+}
+
+.card .card-body h2 {
+    color:white;
+}
+
+.card .card-social {
+    margin-top:20px;
+    height:45px;
+    display:flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card .card-social a {
+    text-decoration: none;
+    color: #1a222e;
+    font-weight:800;
+}
+
+.small-divider {
+    width:50px;
+    height:3px;
+    background-color: white;
+    margin:15px auto;
+}
+
+.container{
+    position: relative;
+    margin-left: 270px;
+    top: 52vh;
+    transform: translate(0, -50%);
+    max-height: 650px;
+    overflow: hidden;
+    max-width:600px;
+}
+
+nav {
+    padding: 20px 0;
+    margin-top: 20vh;
+    margin-left: 270px;
+    position: absolute;
+}
+
+nav a {
+    text-decoration: none;
+    background-color: #453129;
+    padding:10px;
+    border-radius: 50px;
+    color:white;
+    margin-right:10px;
+}
+
+.container .fs-42 {
+    color:#795548;
+    font-size:42px;
+    padding:25px 0 10px 0;
+    text-transform: uppercase;
+}
+
+.container .fs-36 {
+    color:#795548;
+    font-size:36px;
+    padding: 5px 0 5px 0;
+}
+
+.container .fs-24 {
+    font-size:24px;
+    padding: 5px 0 5px 0;
+}
+
+.container .content {
+    height:500px;
+    overflow: auto;
+}
+
+.container .content article {
+    margin-bottom:50px;
+}
+
+#competences, #experiences, #etudes {
+    transition:all .5s ease-in-out ;
+    position: absolute;
+    opacity: 0;
+}
+#competences:target, #experiences:target, #etudes:target  {
+    opacity: 1;
+    position: relative;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #453129;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #453129;
+}

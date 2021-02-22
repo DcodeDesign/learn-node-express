@@ -1,0 +1,22 @@
+<%- include('./partials/header'); %>
+<main>
+    <div class="d-flex">
+        <div class="case">
+            <%- include('./includes/infos'); %>
+        </div>
+        <div class="case">
+            <nav class="nav" >
+                <a href="#competences" title="" > Competences </a>
+                <a href="#experiences" title="" > Experiences </a>
+                <a href="#etudes" title="" > Etudes </a>
+            </nav>
+            <div class="container">
+                <%- include('./includes/competences'); %>
+                <%- include('./includes/experiences'); %>
+                <%- include('./includes/etudes'); %>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('./partials/footer'); %>
+

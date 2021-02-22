@@ -1,0 +1,13 @@
+<div id="etudes">
+    <div class="content ">
+        <h1 class="fs-42">etudes</h1>
+        <% infos.etudes.forEach((value) => { %>
+            <article>
+                <p><%= value.dbt %> - <%= value.fin %></p>
+                <h1 class="fs-24"><%= value.formation %></h1>
+                <h2 class="fs-36"><%= value.ecole %>, <%= value.ville %></h2>
+                <p><%= value.description %></p>
+            </article>
+        <% }) %>
+    </div>
+</div>
