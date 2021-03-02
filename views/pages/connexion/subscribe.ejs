@@ -1,0 +1,73 @@
+<div class="card position-absolute top-50 start-50 translate-middle" style="width: 35rem;">
+    <div class="card-body">
+        <h1 class="card-title"> Connexion</h1>
+        <form action="/subscribe" method="POST">
+            <div class="row g-3">
+                <div class="col">
+                    <label for="nom" class="col-sm-12 col-form-label">Votre nom</label>
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="text" name="nom" class="form-control" id="nom"
+                               placeholder="" value="">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="nom" class="col-sm-12 col-form-label">Votre prenom</label>
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="text" name="prenom" class="form-control" id="prenom"
+                               placeholder="" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col">
+                    <label for="adresse" class="col-sm-12 col-form-label">Votre adresse</label>
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="text" name="adresse" class="form-control" id="adresse"
+                               placeholder="" value="">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="region" class="col-sm-12 col-form-label">Votre région</label>
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="text" name="region" class="form-control" id="region"
+                               placeholder="" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-12 mt-3 row">
+                <label for="tel" class="col-sm-12 col-form-label">Téléphone</label> <br>
+                <div class="col-sm-12">
+                    <input type="tel" name="tel" class="form-control" id="tel" value="">
+                    <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">-->
+                </div>
+            </div>
+            <div class="mb-12 mt-3 row">
+                <label for="staticEmail" class="col-sm-12 col-form-label">Email</label> <br>
+                <div class="col-sm-12">
+                    <input type="email" name="email" class="form-control" id="staticEmail" value="">
+                    <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">-->
+                </div>
+            </div>
+            <div class="mb-12 mt-3 row">
+                <label for="inputPassword" class="col-sm-12 col-form-label">Password</label> <br>
+                <div class="col-sm-12">
+                    <input type="password" name="password" class="form-control" id="inputPassword" value="">
+                </div>
+            </div>
+            <div class="col-auto mt-3">
+                <button type="submit" class="btn btn-primary mb-3">Sign up</button>
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+                <a class="btn btn-secondary nav-link active" href="/">connexion</a>
+            </li>
+        </ul>
+    </div>
+</div>

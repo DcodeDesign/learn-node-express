@@ -1,0 +1,56 @@
+<div class="row">
+    <form name="experiences" action="/new-cv" method="POST">
+        <input type="hidden" name="sendForm" value="formExperiences">
+        <div class="row ">
+            <div class="mb-12 mt-3 row">
+                <label for="posteExperiences" class="col-sm-12 col-form-label">Poste</label>
+                <br>
+                <div class="col-sm-12">
+                    <input type="text" name="posteExperiences" class="form-control" id="posteExperiences"
+                           placeholder="Vendeur" value="">
+                </div>
+            </div>
+
+            <div class="mb-12 mt-3 row">
+                <label for="societeExperiences" class="col-sm-12 col-form-label">Société</label>
+                <br>
+                <div class="col-sm-12">
+                    <input type="text" name="societeExperiences" class="form-control" id="societeExperiences"
+                           placeholder="Tonton Tapis" value="">
+                </div>
+            </div>
+
+            <div class="mb-12 mt-3 row">
+                <label for="villeExperiences" class="col-sm-12 col-form-label">Ville</label>
+                <br>
+                <div class="col-sm-12">
+                    <input type="text" name="villeExperiences" class="form-control" id="villeExperiences"
+                           placeholder="Bruxelles" value="">
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col">
+                    <label for="dbtExperiences" class="col-sm-12 col-form-label">date de début</label>
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="datetime-local" name="dbtExperiences" class="form-control" id="dbtExperiences"
+                               placeholder="2020" value="">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="finExperiences" class="col-sm-12 col-form-label">date de fin</label>
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="datetime-local" name="finExperiences" class="form-control" id="finExperiences"
+                               placeholder="2021" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto mt-3">
+            <button type="submit" class="btn btn-primary mb-3">Valider</button>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,27 @@
+<main class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="new-cv card" style="height:100%;">
+                <div class="card-body">
+                    <a type="button" class="btn btn-primary position-relative top-50 start-50 translate-middle"
+                       href="/new-cv">Creer un nouveau cv</a>
+                </div>
+            </div>
+        </div>
+        <% cv.forEach((item) => { %>
+            <div class="col">
+                <div class="new-cv card" style="">
+                    <div class="card-body">
+                        <h1><%= item.titre %></h1>
+                        <a type="button" class="btn btn-primary"
+                           href="/new-cv/<%= item.id%>">Editer</a>
+                        <a type="button" class="btn btn-primary"
+                           href="/delete-cv/<%= item.id%>">Supprimer</a>
+                        <a type="button" class="btn btn-primary"
+                           href="/cv/<%= item.id%>">Voir</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</main>

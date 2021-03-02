@@ -1,45 +1,24 @@
 const express = require("express")
 const app = express()
+const bodyParser = require('body-parser')
+const session = require('express-session')
 const port = 3000
-const bodyParse = require("body-parser")
 
-const datas = require("./datas/datas")
-
-app.use(bodyParse.json())
-app.use(bodyParse.urlencoded({ extended : true }))
+app.use(bodyParser.json()) // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies for form http post
 
 app.use(express.static("./assets"))
 app.engine('html', require('ejs').renderFile)
 
-app.get("/", (req, res, next) => {
-    res.render("index.ejs", {
-        infos: datas.cv.informations,
-        competences:datas.cv.competences,
-        pages: "includes/competences.ejs"
-    })
-})
+app.use(session({
+    secret: "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+    cookie: {maxAge: (3600 * 100)} // 1h
+}))
 
-app.get("/experiences", (req, res, next) => {
-    res.render("index.ejs", {
-        infos: datas.cv.informations,
-        experiences: datas.cv.experiences,
-        pages: "includes/experiences.ejs"
-    })
-})
 
-app.get("/etudes", (req, res, next) => {
-    res.render("index.ejs", {
-        infos: datas.cv.informations,
-        etudes: datas.cv.etudes,
-        pages: "includes/etudes.ejs"
-    })
-})
+// routage express
+var router = require("./router")
+app.use("/", router)
 
-app.get("/contact", (req, res, next) => {
-    res.render("index.ejs", {
-        infos: datas.cv.informations,
-        pages: "includes/contact.ejs"
-    })
-})
 
-app.listen(port, console.log(`Le serveur écoute sur le port ${port}`))
+app.listen(port, console.log(`Les serveur Express écoute sur le port ${port}`))

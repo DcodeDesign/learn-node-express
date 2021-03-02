@@ -1,0 +1,50 @@
+<div id="competences">
+    <div class="content ">
+        <h1 class="fs-42"> <i class="fas fa-flask"></i> competences</h1>
+        <div class="content-flex">
+            <div>
+                <h1 class="fs-24">langages</h1>
+                <% competences.langages.forEach((value) => { %>
+                    <p><%= value.nom %>
+                    <% for (var i =1; i <= value.nv;  i++ ) { %>
+                            <i class="fas fa-star"></i>
+                    <% } %>
+                    </p>
+                <% }) %>
+            </div>
+
+            <div>
+                <h1 class="fs-24">FrameWork</h1>
+                <% competences.framework.forEach((value) => { %>
+                    <p><%= value.nom %>
+                        <% for (var i =1; i <= value.nv;  i++ ) { %>
+                            <i class="fas fa-star"></i>
+                        <% } %>
+                    </p>
+                <% }) %>
+            </div>
+
+            <div>
+                <h1 class="fs-24">Logiciel</h1>
+                <% competences.logiciel.forEach((value) => { %>
+                    <p><%= value.nom %>
+                        <% for (var i =1; i <= value.nv;  i++ ) { %>
+                            <i class="fas fa-star"></i>
+                        <% } %>
+                    </p>
+                <% }) %>
+            </div>
+
+            <div>
+                <h1 class="fs-24">Autres</h1>
+                <% competences.autres.forEach((value) => { %>
+                    <p><%= value.nom %>
+                    <% for (var i =1; i <= value.nv;  i++ ) { %>
+                        <i class="fas fa-star"></i>
+                    <% } %>
+                </p>
+            <% }) %>
+        </div>
+        </div>
+    </div>
+</div>

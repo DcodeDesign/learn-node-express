@@ -1,0 +1,74 @@
+<div class="row">
+    <form name="competences" action="#" method="POST">
+        <input type="hidden" name="sendForm" value="formCompetences">
+        <div class="row g-3">
+            <div class="col">
+                <label for="titreCompetences" class="col-sm-12 col-form-label">Langage,CMS, ...</label>
+                <br>
+                <div class="col-sm-12">
+                    <input type="text" name="titreCompetences" class="form-control" id="titreCompetences"
+                           placeholder=" PHP, Wordpress, Angular, ..." value="">
+                    <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">-->
+                </div>
+            </div>
+
+            <div class="col">
+                <label for="niveauCompetence" class="col-sm-12 col-form-label">Votre niveau sur 10</label> <br>
+                <div class="col-sm-12">
+                    <input type="text" name="niveauCompetences" class="form-control" id="niveauCompetences" placeholder="5"
+                           value="">
+                </div>
+            </div>
+
+            <div class="mb-12 mt-3 row">
+                <label for="inputPassword" class="col-sm-12 col-form-label">Categorie</label> <br>
+                <div style="padding-left:12px;padding-right:12px;">
+                    <select class="form-select" name="categorieCompetence" aria-label="Default select example"
+                            style="box-sizing:border-box;">
+                        <option selected>Selectionner une categorie</option>
+                        <% categories.forEach((item) => { %>
+                        <option value="<%=  item.id %>"><%=  item.titre %></option>
+                        <% })  %>
+                    </select>
+                </div>
+            </div>
+
+            <!-- categorie -->
+            <div class="mb-12 mt-3 row">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false"
+                                    aria-controls="collapseOne">
+                                créer une catégories
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="mb-12 mt-0 row">
+                                  <form action="#" method="POST">
+                                        <label for="inputPassword"
+                                               class="col-sm-12 col-form-label">categorie</label> <br>
+                                        <div class="col-sm-12">
+                                            <input type="text" name="categorie" class="form-control"
+                                                   id="categorieCompetences"
+                                                   placeholder="langages">
+                                        </div>
+                                        <div class="col-auto mt-3">
+                                            <button type="submit" class="btn btn-primary mb-3">Créer</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto mt-3">
+                <button type="submit" class="btn btn-primary mb-3">Valider</button>
+            </div>
+        </div>
+    </form>
+</div>

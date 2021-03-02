@@ -1,0 +1,56 @@
+<div class="row">
+    <form name="etude" action="/new-cv" method="POST">
+        <input type="hidden" name="sendForm" value="formEtudes">
+        <div class="row ">
+            <div class="mb-12 mt-3 row">
+                <label for="formationEtudes" class="col-sm-12 col-form-label">Nom de la Formation</label>
+                <br>
+                <div class="col-sm-12">
+                    <input type="text" name="formationEtudes" class="form-control" id="formationEtudes"
+                           placeholder="Marketing" value="">
+                </div>
+            </div>
+
+            <div class="mb-12 mt-3 row">
+                <label for="institutionEtudes" class="col-sm-12 col-form-label">Institution</label>
+                <br>
+                <div class="col-sm-12">
+                    <input type="text" name="institutionEtudes" class="form-control" id="institutionEtudes"
+                           placeholder="CFPME" value="">
+                </div>
+            </div>
+
+            <div class="mb-12 mt-3 row">
+                <label for="villeEtudes" class="col-sm-12 col-form-label">Ville</label>
+                <br>
+                <div class="col-sm-12">
+                    <input type="text" name="villeEtudes" class="form-control" id="villeEtudes"
+                           placeholder="Bruxelles" value="">
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col">
+                    <label for="dbtEtudes" class="col-sm-12 col-form-label">date de début</label>
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="datetime-local"  name="dbtEtudes" class="form-control" id="dbtEtudes"
+                               placeholder="2020" value="">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="finEtudes" class="col-sm-12 col-form-label">date de fin</label>
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="datetime-local" name="finEtudes" class="form-control" id="finEtudes"
+                               placeholder="2021" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-auto mt-3">
+            <button type="submit" class="btn btn-primary mb-3">Valider</button>
+        </div>
+    </form>
+</div>
+

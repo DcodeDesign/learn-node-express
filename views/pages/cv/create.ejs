@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-sm-8 new-cv card mt-5 mb-5">
+        <div class="card-body">
+            <!-- competences + categories -->
+            <div>
+                <h1 class="card-title"> Compétences
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#competencesModal">
+                        Ajouter une compétences
+                    </button>
+                </h1>
+                <% competences.forEach((item) => { %>
+                    <p><%= item.fk_categories %>
+                        <%= item.titre %>
+                        <%= item.niveau %></p>
+                <% }) %>
+            </div>
+
+            <!-- experiences -->
+            <div class="mt-5">
+                <h1 class="card-title"> Experiences
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#experiencesModal">
+                        Ajouter une experiences
+                    </button>
+                </h1>
+                <% experiences.forEach((item) => { %>
+                    <p><%= item.post %></p>
+                    <p><%= item.societe %></p>
+                    <p><%= item.ville %></p>
+                    <p> <%= item.date_dbt %></p>
+                    <p><%= item.date_fin %></p>
+                <% }) %>
+            </div>
+
+            <!-- etudes -->
+            <div class="mt-5">
+                <h1 class="card-title"> Etudes
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#etudesModal">
+                        Ajouter une etudes
+                    </button>
+                </h1>
+                <% etudes.forEach((item) => { %>
+                    <p><%= item.formation %></p>
+                    <p><%= item.institution %></p>
+                    <p><%= item.date_dbt %></p>
+                    <p><%= item.ville %></p>
+                    <p> <%= item.date_fin %></p>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 mt-5 mb-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title"> Infos </h1>
+                <%- include('forms/informations.ejs') %>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modals -->
+<%- include('modals/competences.ejs') %>
+<%- include('modals/experiences.ejs') %>
+<%- include('modals/etudes.ejs') %>
