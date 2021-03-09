@@ -1,7 +1,6 @@
-/*
-/!**
+/**
  *  CONTROLLER LOGOUT
- **!/
+ **/
 
 /** GET */
 exports.logout = (req, res) => {

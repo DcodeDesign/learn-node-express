@@ -10,6 +10,8 @@
     <title>CareerCard</title>
 </head>
 <body>
-<% if (locals.user) { %>
+
+<% if (user) { %>
 <%- include('./nav.ejs'); %>
 <% } %>
+<p>connected: <%= user %></p>

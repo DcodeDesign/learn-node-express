@@ -101,6 +101,10 @@ SELECT * FROM competences WHERE fk_user = 1;
 SELECT * FROM experiences WHERE fk_user = 1;
 SELECT * FROM etudes WHERE fk_user = 1;
 
-SELECT * FROM users WHERE email = 'tes2@test'
+SELECT * FROM users WHERE email = 'tes2@test';
 
 DELETE FROM cv WHERE id = 27;
+
+SELECT * FROM users WHERE id = 1;
+
+SELECT * FROM CV WHERE id = 51 AND fk_user = 1

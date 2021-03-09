@@ -1,7 +1,7 @@
 <main class="container mt-5">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-            <div class="new-cv card" style="height:100%;">
+            <div class="new-cv card border-dashed-primary" style="height:100%;">
                 <div class="card-body">
                     <a type="button" class="btn btn-primary position-relative top-50 start-50 translate-middle"
                        href="/new-cv">Creer un nouveau cv</a>
@@ -11,14 +11,27 @@
         <% cv.forEach((item) => { %>
             <div class="col">
                 <div class="new-cv card" style="">
+                    <div class="card-header">
+                        <h3>CV: <%= item.titre %></h3>
+                    </div>
                     <div class="card-body">
-                        <h1><%= item.titre %></h1>
-                        <a type="button" class="btn btn-primary"
-                           href="/new-cv/<%= item.id%>">Editer</a>
-                        <a type="button" class="btn btn-primary"
-                           href="/delete-cv/<%= item.id%>">Supprimer</a>
-                        <a type="button" class="btn btn-primary"
-                           href="/cv/<%= item.id%>">Voir</a>
+                        <!-- ... -->
+                    </div>
+                    <div class="card-footer">
+                        <ul class="nav nav-pills card-header-pills">
+                            <li class="nav-item m-1">
+                                <a type="button" class="btn btn-primary"
+                                   href="/new-cv/<%= item.id%>">Editer</a>
+                            </li>
+                            <li class="nav-item m-1">
+                                <a type="button" class="btn btn-primary"
+                                   href="/delete-cv/<%= item.id%>">Supprimer</a>
+                            </li>
+                            <li class="nav-item m-1">
+                                <a type="button" class="btn btn-primary"
+                                   href="/cv/<%= item.id%>">Voir</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

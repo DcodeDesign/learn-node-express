@@ -19,29 +19,21 @@ exports.subscribe = (req, res) => {
     }
 }
 
-
 exports.register = (req, res) => {
     if (req.session.userID === undefined) {
-
         const email = req.body.email.trim()
-        const password = req.bcrypt.hashSync(req.body.password.trim(), salt);
+        const password = bcrypt.hashSync(req.body.password.trim(), salt);
         const prenom = req.body.prenom.trim()
         const nom = req.body.nom.trim()
-        const rue = req.body.rue.trim()
+        const rue = req.body.adresse.trim()
         const region = req.body.region.trim()
         const tel = req.body.tel.trim()
 
         subscribeController.postSubscribeModel({
-            email,
-            password,
-            prenom,
-            nom,
-            rue,
-            region,
-            tel
+            email, password, prenom, nom, rue, region, tel
         }).then((user) => {
             if (typeof user !== 'undefined' && user.length > 0) {
-
+                res.redirect('/subscribe')
             } else {
                 res.redirect('/')
             }
@@ -50,27 +42,3 @@ exports.register = (req, res) => {
         res.redirect('/')
     }
 }
-
-/*
-
-/!** GET *!/
-app.get("/subscribe", (req, res, next) => {
-
-})
-
-/!** POST *!/
-app.post("/subscribe", (req, res, next) => {
-    const salt = bcrypt.genSaltSync(saltRounds);
-    const hash = bcrypt.hashSync(req.body.password, salt);
-
-    if (sess === undefined) {
-        , (error, results, fields) => {
-            if (error)
-                res.redirect('/')
-            res.redirect("/")
-        })
-    } else {
-        res.redirect("/dashboard")
-    }
-})
-*/

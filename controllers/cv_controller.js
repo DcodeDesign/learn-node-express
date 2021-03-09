@@ -29,48 +29,153 @@ exports.deleteCV = (req, res) => {
 }
 
 /** GET */
-exports.getCompetences =(req, res, next) => {
-    cvModel.getCompetencesModel(req.session.userID, req.param.id).then((datas) => {
-        res.locals.competences = datas;
-        next()
-    })
+exports.getCompetences = (req, res, next) => {
+    let user = req.session.userID
+    if (user !== undefined) {
+        cvModel.getCompetencesModel(req.session.userID, req.param.id).then((datas) => {
+            res.locals.competences = datas;
+            next()
+        })
+    } else {
+        res.redirect('/')
+    }
 }
 
-exports.getExperiences =(req, res, next) => {
-    cvModel.getExperiencesModel(req.session.userID, req.param.id).then((datas) => {
-        res.locals.experiences = datas;
-        next()
-    })
+exports.getExperiences = (req, res, next) => {
+    let user = req.session.userID
+    if (user !== undefined) {
+        cvModel.getExperiencesModel(req.session.userID, req.params.id).then((datas) => {
+            res.locals.experiences = datas;
+            next()
+        })
+    } else {
+        res.redirect('/')
+    }
 }
 
-exports.getEtudes =(req, res, next) => {
-    cvModel.getEtudesModel(req.session.userID, req.param.id).then((datas) => {
-        res.locals.etudes = datas;
-        next()
-    })
+exports.getEtudes = (req, res, next) => {
+    let user = req.session.userID
+    if (user !== undefined) {
+        cvModel.getEtudesModel(req.session.userID, req.params.id).then((datas) => {
+            res.locals.etudes = datas;
+            next()
+        })
+    } else {
+        res.redirect('/')
+    }
 }
 
-exports.getCategories =(req, res, next) => {
-    cvModel.getCategoriesModel(req.session.userID, req.param.id).then((datas) => {
-        res.locals.categories = datas;
-        next()
-    })
+exports.getCategories = (req, res, next) => {
+    let user = req.session.userID
+    if (user !== undefined) {
+        cvModel.getCategoriesModel(req.session.userID, req.params.id).then((datas) => {
+            res.locals.categories = datas;
+            next()
+        })
+    } else {
+        res.redirect('/')
+    }
 }
 
-exports.getAll=(req, res) => {
+exports.getInfosUser = (req, res, next) => {
+    let user = req.session.userID
+    if (user !== undefined) {
+        cvModel.getInfosUserModel(req.session.userID).then((datas) => {
+            res.locals.infosUser = datas;
+            next()
+        })
+    } else {
+        res.redirect('/')
+    }
+}
+
+exports.getCV = (req, res, next) => {
+    let user = req.session.userID
+    if (user !== undefined) {
+        cvModel.getCVModel(req.session.userID, req.params.id).then((datas) => {
+            res.locals.cv = datas;
+            next()
+        })
+    } else {
+        res.redirect('/')
+    }
+}
+
+
+exports.getAll = (req, res) => {
     let locals = res.locals
-    res.render("index.ejs", {
-        page : "pages/cv/create.ejs",
-        cvID : req.param.id,
-        user: req.session.userID,
-        categories: locals.categories,
-        competences: locals.competences,
-        experiences: locals.experiences,
-        etudes: locals.etudes
-    })
+    let user = req.session.userID
+    if (user !== undefined) {
+        res.render("index.ejs", {
+            page: "pages/cv/create.ejs",
+            cvID: req.params.id,
+            user: req.session.userID,
+            cv: locals.cv,
+            categories: locals.categories,
+            competences: locals.competences,
+            experiences: locals.experiences,
+            etudes: locals.etudes,
+            infos: locals.infosUser
+        })
+    } else {
+        res.redirect('/')
+    }
+}
+
+exports.postCV = (req, res, next) => {
+    let user = req.session.userID
+    if (user !== undefined) {
+        switch (req.body.sendForm) {
+            case 'formCompetences':
+                cvModel.postCompetences(req).then(() => {
+                    res.redirect(`/new-cv/${req.params.id}`)
+                })
+                break;
+
+            case 'formExperiences':
+                cvModel.postExperiences(req).then(() => {
+                    res.redirect(`/new-cv/${req.params.id}`)
+                })
+                break;
+
+            case 'formEtudes':
+                cvModel.postEtudes(req).then(() => {
+                    res.redirect(`/new-cv/${req.params.id}`)
+                })
+                break;
+
+            default:
+                res.redirect('/dashboard')
+        }
+    } else {
+        res.redirect('/')
+    }
 }
 
 /*
+
+if (req.session.userID === undefined) {
+        const email = req.body.email.trim()
+        const password = bcrypt.hashSync(req.body.password.trim(), salt);
+        const prenom = req.body.prenom.trim()
+        const nom = req.body.nom.trim()
+        const rue = req.body.adresse.trim()
+        const region = req.body.region.trim()
+        const tel = req.body.tel.trim()
+
+        subscribeController.postSubscribeModel({
+            email, password, prenom, nom, rue, region, tel
+        }).then((user) => {
+            if (typeof user !== 'undefined' && user.length > 0) {
+                res.redirect('/subscribe')
+            } else {
+                res.redirect('/')
+            }
+        }).catch((error) => (console.log(error)))
+    } else {
+        res.redirect('/')
+    }
+
 app.post("/cv", (req, res, next) => {
     switch (req.body.sendForm) {
         case 'formCompetences':

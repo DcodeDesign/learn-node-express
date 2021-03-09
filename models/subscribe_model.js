@@ -13,16 +13,15 @@ exports.getSubscribeModel = () => {
 
 /** POST */
 exports.postSubscribeModel = (...post) => {
-    console.log(post)
     return connection.then((conn) => {
         return conn.query("INSERT INTO users SET ? ", {
-            email: post.email,
-            password: post.password,
-            prenom: post.prenom,
-            nom: post.nom,
-            rue: post.rue,
-            region: post.region,
-            tel: post.tel
+            email: post[0].email,
+            password: post[0].password,
+            prenom: post[0].prenom,
+            nom: post[0].nom,
+            rue: post[0].rue,
+            region: post[0].region,
+            tel: post[0].tel
         })
     })
 }

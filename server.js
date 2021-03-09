@@ -2,7 +2,14 @@ const express = require("express")
 const app = express()
 const bodyParser = require('body-parser')
 const session = require('express-session')
-const port = 3000
+const dotenv = require("dotenv")
+dotenv.config()
+const cors = require("cors")
+
+const local = (typeof process.env.o2switch == "undefined")
+
+const corsOptions = { origin: `http://localhost:*` }
+app.use(cors(corsOptions))
 
 app.use(bodyParser.json()) // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies for form http post
@@ -21,4 +28,9 @@ var router = require("./router")
 app.use("/", router)
 
 
-app.listen(port, console.log(`Les serveur Express écoute sur le port ${port}`))
+if(!local)
+    app.listen()
+else
+    app.listen(process.env.LISTEN_PORT, () => { console.log(`Le serveur écoute sur le local sur le port ${process.env.LISTEN_PORT}`)})
+
+

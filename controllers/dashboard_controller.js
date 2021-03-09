@@ -33,6 +33,5 @@ app.get("/dashboard", (req, res, next) => {
     } else {
         res.redirect("/")
     }
-
 })
 */

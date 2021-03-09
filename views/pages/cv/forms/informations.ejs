@@ -1,15 +1,66 @@
-<form action="#" method="POST">
+<form action="/new-cv/<%= cvID %>" method="POST">
     <input type="hidden" name="sendForm" value="formInfos">
     <div class="mb-12 row">
         <label for="titrecv" class="col-sm-12 col-form-label">titre du cv</label>
         <br>
         <div class="col-sm-12">
             <input type="text" name="titrecv" class="form-control" id="titrecv"
-                   placeholder="CV Vendeur" value="">
+                   placeholder="..." value="<%= cv[0].titre %>">
             <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">-->
         </div>
     </div>
-
+    <div class="row g-3">
+        <div class="col">
+            <label for="nom" class="col-sm-12 col-form-label">Votre nom</label>
+            <br>
+            <div class="col-sm-12">
+                <input type="text" name="nom" class="form-control" id="nom"
+                       placeholder="..." value="<%= infos[0].nom %>">
+            </div>
+        </div>
+        <div class="col">
+            <label for="nom" class="col-sm-12 col-form-label">Votre prenom</label>
+            <br>
+            <div class="col-sm-12">
+                <input type="text" name="prenom" class="form-control" id="prenom"
+                       placeholder="..." value="<%= infos[0].prenom %>">
+            </div>
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="col">
+            <label for="adresse" class="col-sm-12 col-form-label">Votre adresse</label>
+            <br>
+            <div class="col-sm-12">
+                <input type="text" name="adresse" class="form-control" id="adresse"
+                       placeholder="..." value="<%= infos[0].rue %>">
+            </div>
+        </div>
+        <div class="col">
+            <label for="region" class="col-sm-12 col-form-label">Votre région</label>
+            <br>
+            <div class="col-sm-12">
+                <input type="text" name="region" class="form-control" id="region"
+                       placeholder="..." value="<%= infos[0].region %>">
+            </div>
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="col">
+            <label for="tel" class="col-sm-12 col-form-label">Téléphone</label> <br>
+            <div class="col-sm-12">
+                <input type="tel" placeholder="..." name="tel" class="form-control" id="tel" value="<%= infos[0].tel %>">
+                <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">-->
+            </div>
+        </div>
+        <div class="col">
+            <label for="staticEmail" class="col-sm-12 col-form-label">Email</label> <br>
+            <div class="col-sm-12">
+                <input type="email" placeholder="..." name="email" class="form-control" id="staticEmail" value="<%= infos[0].email %>">
+                <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">-->
+            </div>
+        </div>
+    </div>
     <div class="mb-12 mt-3 row">
         <label for="description" class="col-sm-12 col-form-label">Description</label>
         <br>
@@ -18,4 +69,5 @@
             <!--<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">-->
         </div>
     </div>
+
 </form>

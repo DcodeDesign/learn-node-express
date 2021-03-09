@@ -1,52 +1,83 @@
 <div class="row">
     <div class="col-sm-8 new-cv card mt-5 mb-5">
-        <div class="card-body">
-            <!-- competences + categories -->
-            <div>
-                <h1 class="card-title"> Compétences
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#competencesModal">
-                        Ajouter une compétences
+        <!-- competences + categories -->
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseCompetences" aria-expanded="false"
+                            aria-controls="flush-collapseOne">
+                        <h2>Compétences</h2>
                     </button>
-                </h1>
-                <% competences.forEach((item) => { %>
-                    <p><%= item.fk_categories %>
-                        <%= item.titre %>
-                        <%= item.niveau %></p>
-                <% }) %>
+                </h2>
+                <div id="flush-collapseCompetences" class="accordion-collapse collapse"
+                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <% competences.forEach((item) => { %>
+                            <p><%= item.fk_categories %>
+                                <%= item.titre %>
+                                <%= item.niveau %></p>
+                        <% }) %>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#competencesModal">
+                            Ajouter une compétences
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- experiences -->
-            <div class="mt-5">
-                <h1 class="card-title"> Experiences
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#experiencesModal">
-                        Ajouter une experiences
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseExperience" aria-expanded="false"
+                            aria-controls="flush-collapseOne">
+                        <h2>Experiences</h2>
                     </button>
-                </h1>
-                <% experiences.forEach((item) => { %>
-                    <p><%= item.post %></p>
-                    <p><%= item.societe %></p>
-                    <p><%= item.ville %></p>
-                    <p> <%= item.date_dbt %></p>
-                    <p><%= item.date_fin %></p>
-                <% }) %>
+                </h2>
+                <div id="flush-collapseExperience" class="accordion-collapse collapse"
+                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <% experiences.forEach((item) => { %>
+                            <p><%= item.post %></p>
+                            <p><%= item.societe %></p>
+                            <p><%= item.ville %></p>
+                            <p> <%= item.date_dbt %></p>
+                            <p><%= item.date_fin %></p>
+                        <% }) %>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#experiencesModal">
+                            Ajouter une experiences
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- etudes -->
-            <div class="mt-5">
-                <h1 class="card-title"> Etudes
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#etudesModal">
-                        Ajouter une etudes
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseEtudes" aria-expanded="false"
+                            aria-controls="flush-collapseOne">
+                        <h2>Etudes</h2>
                     </button>
-                </h1>
-                <% etudes.forEach((item) => { %>
-                    <p><%= item.formation %></p>
-                    <p><%= item.institution %></p>
-                    <p><%= item.date_dbt %></p>
-                    <p><%= item.ville %></p>
-                    <p> <%= item.date_fin %></p>
-                <% }) %>
+                </h2>
+                <div id="flush-collapseEtudes" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                     data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <% etudes.forEach((item) => { %>
+                            <p><%= item.formation %></p>
+                            <p><%= item.institution %></p>
+                            <p><%= item.date_dbt %></p>
+                            <p><%= item.ville %></p>
+                            <p> <%= item.date_fin %></p>
+                        <% }) %>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#etudesModal">
+                            Ajouter une etudes
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
